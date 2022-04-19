@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Carrinho de Compras</title>
+
+    <header>
+        <h1>Minhas Compras</h1>
+    </header>
+
+    <div class="back">
+        <main>
+            <div class="title">
+                <h2>Controle de Produtos</h2>
+            </div>
+            <div class="info-produtos">
+                <div class="card">
+                    <div class="lineInput">
+                        <label>Produto</label>
+                        <input type="text" id="produto" placeholder="Nome do produto">
+                    </div>
+                    <div class="lineInput">
+                        <label>Quantidade</label>
+                        <input type="number" id="quantidade" placeholder="Quantidade de produto">
+                    </div>
+                    <div class="lineInput">
+                        <label>Valor</label>
+                        <input type="number" id="preco" placeholder="Valor do produto">
+                    </div>
+                    <button onclick="produto.salvar()" id="btn1" >Salvar</button>
+                    <button onclick="produto.cancelar()">cancelar</button>
+                </div>
+            </div>
+            
+            <div class="content">
+                <table>
+                    <span>Lista de produtos</span>
+                    <thead>
+                        <th>ID</th>
+                        <th>Produto</th>
+                        <th>Qnt</th>
+                        <th>Valor</th>
+                        <th>Ações</th>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+
+
+
+    <script src="js/script01.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
