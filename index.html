@@ -5,59 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Carrinho de Compras</title>
+    <title>Teste Avaliação</title>
+
+    <body>
 
     <header>
-        <h1>Minhas Compras</h1>
+        <h1>TESTE DE AVALIAÇÃO: RENAN XAVIER</h1>
     </header>
 
     <div class="back">
         <main>
-            <div class="title">
-                <h2>Controle de Produtos</h2>
-            </div>
             <div class="info-produtos">
+                <div class="title">
+                    <h2>CADASTRAR PRODUTO</h2>
+                </div>
                 <div class="card">
                     <div class="lineInput">
-                        <label>Produto</label>
-                        <input type="text" id="produto" placeholder="Nome do produto">
+                        <label> NOME PRODUTO</label>
+                        <input type="text" id="produto" placeholder="Ex:Leite">
                     </div>
                     <div class="lineInput">
-                        <label>Quantidade</label>
-                        <input type="number" id="quantidade" placeholder="Quantidade de produto">
+                        <label>FABRICANTE PRODUTO</label>
+                        <input type="text" id="Fproduto" placeholder="Ex:Vakas">
                     </div>
                     <div class="lineInput">
-                        <label>Valor</label>
-                        <input type="number" id="preco" placeholder="Valor do produto">
+                        <label>CATEGORIA</label>
+                        <input type="text" id="categoria" placeholder="Leite integral">
                     </div>
-                    <button onclick="produto.salvar()" id="btn1" >Salvar</button>
-                    <button onclick="produto.cancelar()">cancelar</button>
+                    <div class="lineInput">
+                        <label>QUANTIDADE</label>
+                        <input type="number" id="quantidade" placeholder="Ex: 12">
+                    </div>
+                    <div class="lineInput">
+                        <label>VALOR UNIDADE</label>
+                        <input type="number" id="preco" placeholder="R$00,00">
+                    </div>
+                    <button onclick="produto.salvar()" id="btn1" >Adcionar</button>
+                    <button id="canelar" onclick="produto.cancelar()">cancelar</button>
                 </div>
             </div>
             
             <div class="content">
                 <table>
-                    <span>Lista de produtos</span>
+                    <span><h2>PRODUTOS CADASTRADOS</h2></span>
                     <thead>
                         <th>ID</th>
-                        <th>Produto</th>
-                        <th>Qnt</th>
-                        <th>Valor</th>
-                        <th>Ações</th>
+                        <th>NOME</th>
+                        <th>FABRICANTE</th>
+                        <th>CATEGORIA</th>
+                        <th>QNT</th>
+                        <th>VALOR</th>
+                        <th></th>
                     </thead>
                     <tbody id="tbody">
                     </tbody>
                 </table>
             </div>
         </main>
+        <div><h1 id="resultado">TOTAL:</h1></div>
     </div>
 
+    <div id="localstore">
+        <button type="button" onclick="salvarDados()">Salvar Dados</button>
+    </div>
 
-
-
-    <script src="js/script01.js"></script>
+    <script src="js/adicionar.js"></script>
+    <script src="js/localstorage.js"></script>
 </head>
-<body>
     
 </body>
 </html>

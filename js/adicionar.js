@@ -7,6 +7,7 @@ class Produto {
     }
 
     salvar(){
+
         let produto = this.lerDados();
 
         if(this.validaCampos(produto)){
@@ -30,45 +31,53 @@ class Produto {
 
             let td_id = tr.insertCell();
             let td_produto = tr.insertCell();
+            let td_fabricante = tr.insertCell();
+            let td_categoria = tr.insertCell();
             let td_quantidade = tr.insertCell();
             let td_valor = tr.insertCell();
             let td_acoes= tr.insertCell();
 
             td_id.innerText = this.arrayProdutos[i].id;
             td_produto.innerText = this.arrayProdutos[i].nomeProduto;
+            td_fabricante.innerText = this.arrayProdutos[i].fabricanteProduto;
+            td_categoria.innerText = this.arrayProdutos[i].categoria;
             td_valor.innerText = this.arrayProdutos[i].preco;
             td_quantidade.innerText = this.arrayProdutos[i].quantidade;
             
-
             let imgEdit = document.createElement('img');
             imgEdit.src = "img/editar.png";
-            imgEdit.setAttribute("onclick", "produto.preparaEdicao("+ JSON.stringify(this.arrayProdutos[i]) +")")
+            imgEdit.setAttribute("onclick", "produto.preparaEdicao("+ JSON.stringify(this.arrayProdutos[i]) +")"); 
 
             let imgDelete = document.createElement('img');
             imgDelete.src = 'img/excluir.png'
-            imgDelete.setAttribute("onclick", "produto.deletar("+ this.arrayProdutos[i].id +")")
+            imgDelete.setAttribute("onclick", "produto.deletar("+ this.arrayProdutos[i].id +")");
 
             td_acoes.appendChild(imgEdit);
             td_acoes.appendChild(imgDelete);
 
             console.log(this.arrayProdutos);
 
-
         }
     }
 
     adicionar(produto){
-        produto.preco = parseFloat(produto.preco)
+        produto.preco = parseFloat(produto.preco);
         this.arrayProdutos.push(produto);
         this.id++;
+
+        var n2 = parseInt(document.getElementById("preco").value, 10);
+    var n1 = parseInt(document.getElementById("quantidade").value, 10);
+    document.getElementById("resultado").innerHTML = `Total: R$ ${ n2 * n1},00` ;
     }
 
     atualizar(id, produto){
         for ( let i = 0; i < this.arrayProdutos.length; i ++) {
             if(this.arrayProdutos[i].id == id){
                 this.arrayProdutos[i].nomeProduto = produto.nomeProduto;
-                this.arrayProdutos[i].preco = produto.preco;
+                this.arrayProdutos[i].fabricanteProduto = produto.fabricanteProduto;
+                this.arrayProdutos[i].categoria = produto.categoria;
                 this.arrayProdutos[i].quantidade = produto.quantidade;
+                this.arrayProdutos[i].preco = produto.preco;
             }
         }
     }
@@ -76,8 +85,10 @@ class Produto {
     preparaEdicao(dados){
         this.editId = dados.id;
         document.getElementById('produto').value = dados.nomeProduto;
-        document.getElementById('preco').value = dados.preco;
+        document.getElementById('Fproduto').value = dados.fabricanteProduto;
+        document.getElementById('categoria').value = dados.categoria;
         document.getElementById('quantidade').value = dados.quantidade;
+        document.getElementById('preco').value = dados.preco;
 
         document.getElementById('btn1').innerText = 'Atualizar';
     }
@@ -88,8 +99,10 @@ class Produto {
 
         produto.id = this.id;
         produto.nomeProduto = document.getElementById('produto').value;
-        produto.preco = document.getElementById('preco').value;
+        produto.fabricanteProduto = document.getElementById('Fproduto').value;
+        produto.categoria = document.getElementById('categoria').value;
         produto.quantidade = document.getElementById('quantidade').value;
+        produto.preco = document.getElementById('preco').value;
 
         return produto;
         
@@ -117,8 +130,10 @@ class Produto {
 
     cancelar(){
         document.getElementById('produto').value = '';
-        document.getElementById('preco').value = '';
+        document.getElementById('Fproduto').value = '';
+        document.getElementById('categoria').value = '';
         document.getElementById('quantidade').value = '';
+        document.getElementById('preco').value = '';
 
         document.getElementById('btn1').innerText = 'Salvar'
         this.editId = null;
@@ -141,3 +156,4 @@ class Produto {
 }
 
 let produto = new Produto();
+
