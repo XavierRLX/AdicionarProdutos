@@ -224,18 +224,6 @@ adicionarProdutoPg.addEventListener('click', function () {
 });
 
 
-imgEdit.addEventListener('click', function () {
-    this.classList.toggle('aberto');
-    adicionarProdutoSeta.classList.toggle('virado');
-    if (this.classList.contains('aberto')) {
-        setTimeout(function() {
-            adicionarProdutoForm.style.display = 'block';
-        }, 200);
-    } else {
-        adicionarProdutoForm.style.display = 'none';
-    }
-});
-
 // cancela o evento toggle no forms.
 adicionarProdutoForm.addEventListener('click', function (event) {
     event.stopPropagation();
