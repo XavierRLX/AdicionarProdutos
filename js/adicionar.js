@@ -73,8 +73,10 @@ class Produto {
             // criar botões para editar e excluir o produto
             let imgEdit = document.createElement('img');
             imgEdit.src = "img/editar.png";
+            imgEdit.addEventListener('click', abrirAdicionarProduto);
             imgEdit.setAttribute("onclick", "produto.preparaEdicao(" + JSON.stringify(this.arrayProdutos[i]) + ")");
-
+           
+           
             let imgDelete = document.createElement('img');
             imgDelete.src = 'img/excluir.png'
             imgDelete.setAttribute("onclick", "produto.deletar(" + this.arrayProdutos[i].id + ")");
@@ -227,10 +229,11 @@ let produto = new Produto();
 const adicionarProdutoPg = document.getElementById('adicionar-produto');
 const adicionarProdutoSeta = document.getElementById('adicionar-produto-topo');
 const adicionarProdutoForm = document.getElementById('adicionar-produto-form');
+const imgEdit2 = document.querySelector('.imgBtn');
+
 
 adicionarProdutoPg.addEventListener('click', function () {
     this.classList.toggle('aberto');
-    adicionarProdutoSeta.classList.toggle('virado');
     if (this.classList.contains('aberto')) {
         setTimeout(function() {
             adicionarProdutoForm.style.display = 'block';
@@ -240,6 +243,16 @@ adicionarProdutoPg.addEventListener('click', function () {
     }
 });
 
+function abrirAdicionarProduto() {
+    adicionarProdutoPg.classList.toggle('aberto');
+    if (adicionarProdutoPg.classList.contains('aberto')) {
+      setTimeout(function() {
+        adicionarProdutoForm.style.display = 'block';
+      }, 200);
+    } else {
+      adicionarProdutoForm.style.display = 'none';
+    }
+  }
 
 
 // cancela o evento toggle no forms.
