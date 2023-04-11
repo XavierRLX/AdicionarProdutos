@@ -1,18 +1,25 @@
+// função para salvar dados no localStorage
 function salvarDados() {
     localStorage.setItem('produtos', JSON.stringify(produto.arrayProdutos));
 }
 
+// função para carregar dados do localStorage
 function carregarDados() {
+    // obter dados do localStorage ou iniciar um array vazio
     const dados = JSON.parse(localStorage.getItem('produtos')) || [];
+    // atribuir dados ao array de produtos
     produto.arrayProdutos = dados;
+    // listar produtos na tabela
     produto.listaTabela();
 }
+
+// aguardar o carregamento do DOM antes de executar a função
 document.addEventListener('DOMContentLoaded', function () {
     carregarDados();
 });
 
+// classe Produto
 class Produto {
-
     constructor() {
         this.id = 1;
         this.arrayProdutos = [];
@@ -20,9 +27,10 @@ class Produto {
     }
 
     salvar() {
-
+        // obter os dados do produto
         let produto = this.lerDados();
 
+        // validar campos antes de adicionar ou atualizar o produto
         if (this.validaCampos(produto)) {
             if (this.editId == null) {
                 this.adicionar(produto);
@@ -31,55 +39,61 @@ class Produto {
             }
         }
 
+        // listar produtos na tabela e cancelar a edição
         this.listaTabela();
         this.cancelar();
     }
 
+    // listar produtos na tabela
     listaTabela() {
+        // obter o elemento tbody da tabela
         let tbody = document.getElementById('tbody');
+        // limpar o conteúdo atual do tbody
         tbody.innerText = '';
 
+        // iterar sobre o array de produtos e criar uma nova linha para cada produto
         for (let i = 0; i < this.arrayProdutos.length; i++) {
             let tr = tbody.insertRow();
 
-            // let td_id = tr.insertCell();
+            // criar células da linha para cada campo do produto
             let td_produto = tr.insertCell();
-            //let td_fabricante = tr.insertCell();
             let td_categoria = tr.insertCell();
             let td_quantidade = tr.insertCell();
             let td_valor = tr.insertCell();
             let td_total = tr.insertCell();
             let td_acoes = tr.insertCell();
 
-            //td_id.innerText = this.arrayProdutos[i].id;
+            // preencher as células com os valores do produto
             td_produto.innerText = this.arrayProdutos[i].nomeProduto;
-            //td_fabricante.innerText = this.arrayProdutos[i].fabricanteProduto;
             td_categoria.innerText = this.arrayProdutos[i].categoria;
             td_valor.innerText = this.arrayProdutos[i].preco;
             td_quantidade.innerText = this.arrayProdutos[i].quantidade;
             td_total.innerText = this.arrayProdutos[i].quantidade * this.arrayProdutos[i].preco;
 
+            // criar botões para editar e excluir o produto
             let imgEdit = document.createElement('img');
             imgEdit.src = "img/editar.png";
             imgEdit.setAttribute("onclick", "produto.preparaEdicao(" + JSON.stringify(this.arrayProdutos[i]) + ")");
 
-            
             let imgDelete = document.createElement('img');
             imgDelete.src = 'img/excluir.png'
             imgDelete.setAttribute("onclick", "produto.deletar(" + this.arrayProdutos[i].id + ")");
 
+            // adicionar botões à célula de ações
             td_acoes.appendChild(imgEdit);
             td_acoes.appendChild(imgDelete);
 
+            // imprimir o array de produtos no console
             console.log(this.arrayProdutos);
-
         }
     }
 
-
+    // adicionar um novo produto
     adicionar(produto) {
+        // converter o preço do produto para um número decimal
         produto.preco = parseFloat(produto.preco);
-        produto.total = produto.quantidade * produto.preco;
+        // calcular o total do produto multiplicando a quantidade pelo preço
+        produto.total = produto.quantidade * produto.preco
         this.arrayProdutos.push(produto);
         this.id++;
 
@@ -207,6 +221,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let produto = new Produto();
 
+
+
+// Abre o adicionar produtos +
 const adicionarProdutoPg = document.getElementById('adicionar-produto');
 const adicionarProdutoSeta = document.getElementById('adicionar-produto-topo');
 const adicionarProdutoForm = document.getElementById('adicionar-produto-form');
