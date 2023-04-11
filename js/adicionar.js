@@ -224,6 +224,7 @@ adicionarProdutoPg.addEventListener('click', function () {
 });
 
 
+
 // cancela o evento toggle no forms.
 adicionarProdutoForm.addEventListener('click', function (event) {
     event.stopPropagation();
