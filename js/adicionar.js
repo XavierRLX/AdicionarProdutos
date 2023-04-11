@@ -232,16 +232,6 @@ const adicionarProdutoForm = document.getElementById('adicionar-produto-form');
 const imgEdit2 = document.querySelector('.imgBtn');
 
 
-adicionarProdutoPg.addEventListener('click', function () {
-    this.classList.toggle('aberto');
-    if (this.classList.contains('aberto')) {
-        setTimeout(function() {
-            adicionarProdutoForm.style.display = 'block';
-        }, 200);
-    } else {
-        adicionarProdutoForm.style.display = 'none';
-    }
-});
 
 function abrirAdicionarProduto() {
     adicionarProdutoPg.classList.toggle('aberto');
@@ -254,8 +244,29 @@ function abrirAdicionarProduto() {
     }
   }
 
+adicionarProdutoPg.addEventListener('click', abrirAdicionarProduto);
+
 
 // cancela o evento toggle no forms.
 adicionarProdutoForm.addEventListener('click', function (event) {
     event.stopPropagation();
 });
+
+
+const btnLista = document.getElementById('btnLista');
+const btnCarrinho = document.getElementById('btnCarrinho');
+const listaProduto = document.querySelector('.ListaProduto');
+const back = document.querySelector('.back');
+
+btnLista.addEventListener('click', () => {
+    listaProduto.style.display = 'flex';
+    back.style.display = 'none';
+   
+  });
+  
+  btnCarrinho.addEventListener('click', () => {
+    back.style.display = 'flex';
+    listaProduto.style.display = 'none';
+   
+  });
+  

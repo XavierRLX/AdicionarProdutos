@@ -13,6 +13,11 @@ body{
     font-family: nunito sans;
     background-color: #ffffff;
   }
+  .center{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
 
   h1{
     font-size: 2em;
@@ -21,7 +26,52 @@ body{
   header {
     text-align: center;
     height: 50px;
-    margin: 50px;
+    margin: 30px;
+  }
+  
+  nav > .btnMenu {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .btnMenu > button {
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.281);
+    
+  }
+  .ListaProduto{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 800px;
+    transform: translateX(-100%);
+    /* Define a animação */
+    animation: anima-da-esquerda-para-direita 1s ease-in-out forwards;
+  }
+  .btnAdcLista{
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+    margin: 10px 0 0 0;
+    box-shadow: 0px 2px 51px rgba(0, 0, 0, 0.158);
+    background-color: #6FCF97;
+}
+  .adcLista{
+    border-bottom: #535151 solid 1px;
+  }
+  #labelLista {
+    font-weight: 700;
+    padding: 5px;
+}
+  #inputLista {
+    border: none;
   }
   
   main {
@@ -29,12 +79,16 @@ body{
     justify-content: center;
     margin: 0 auto;
     max-width: 800px;
+    display: none;
+    transform: translateX(100%);
+    /* Define a animação */
+    animation: anima-da-direita-para-esquerda 1s ease-in-out forwards;
   }
   
   .content {
     background-color: #ffffff;
     padding: 20px;
-    box-shadow: 0px 1px 5px rgb(0, 0, 0);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.281);
     border-radius: 5px;
     width: 85%;
   }
@@ -163,7 +217,7 @@ img {
       margin-bottom: 10px;
   }
 
-  input {
+ .lineInput > input {
       height: 30px;
       width: 400px;
       border: none;
@@ -199,7 +253,7 @@ img {
     animation: animacao 1s forwards;
   }
 
-   /* Define a animação */
+   /* Define a animação Form */
   @keyframes animacao {
     from {
       opacity: 0;
@@ -210,6 +264,21 @@ img {
       transform: translateY(0);
     }
   }
-  
 
-  
+  @keyframes anima-da-direita-para-esquerda {
+    from {
+      transform: translateX(100%); /* Define a posição inicial do elemento fora da tela, à direita */
+    }
+    to {
+      transform: translateX(0); /* Define a posição final do elemento na tela, à esquerda */
+    }
+  }
+
+  @keyframes anima-da-esquerda-para-direita {
+    from {
+      transform: translateX(-100%); /* Define a posição inicial do elemento fora da tela, à esquerda */
+    }
+    to {
+      transform: translateX(0); /* Define a posição final do elemento fora da tela, à direita */
+    }
+  }

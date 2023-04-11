@@ -11,14 +11,36 @@
 <body>
 
     <header>
-        <h1>LISTA DE PRODUTOS</h1>
+        <h1>ListPro</h1>
     </header>
+
+    <nav>
+        <div class="btnMenu">
+            <button id="btnLista">Lista</button>
+            <button id="btnCarrinho">Carrinho</button>
+        </div>
+    </nav>
+
+    <section id="ListaProdutoId" class="ListaProduto">
+        <div class="content">
+            <h2>Produtos a comprar</h2> <br>
+            <div class="flex">
+                <div class="adcLista">
+                    <label id="labelLista"> Item:</label>
+                    <input id="inputLista" type="text" id="produto" placeholder="Escreva o item">
+                </div>
+                <div>
+                    <button class="btnAdcLista">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <main class="back">
         <div class="content">
             <table>
                 <span>
-                    <h2>PRODUTOS CADASTRADOS</h2>
+                    <h2>Carrinho</h2>
                 </span>
                 <thead>
                     <th>NOME</th>
@@ -41,7 +63,7 @@
         
     <div id="adicionar-produto">
         <div id="adicionar-produto-topo">
-            <div id="adicionar-produto-texto">ADICIONAR PRODUTOS <span>+</span></div>
+            <div id="adicionar-produto-texto">ADICIONAR AO CARRINHO <span>+</span></div>
             <!-- <div id="adicionar-produto-seta"></div> -->
         </div>
         <div id="adicionar-produto-form">
