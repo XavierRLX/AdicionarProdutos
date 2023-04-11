@@ -82,7 +82,7 @@ body{
     display: none;
     transform: translateX(100%);
     /* Define a animação */
-    animation: anima-da-direita-para-esquerda 1s ease-in-out forwards;
+    animation: anima-da-esquerda-para-direita 1s ease-in-out forwards;
   }
   
   .content {

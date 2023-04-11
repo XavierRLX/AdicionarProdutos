@@ -261,12 +261,21 @@ const back = document.querySelector('.back');
 btnLista.addEventListener('click', () => {
     listaProduto.style.display = 'flex';
     back.style.display = 'none';
-   
+    btnCarrinho.style.backgroundColor = '#fff'
+    btnCarrinho.style.color = '#000'
+    btnLista.style.backgroundColor = '#535151'
+    btnLista.style.color = '#fff'
+    
   });
   
   btnCarrinho.addEventListener('click', () => {
+    listaProduto.classList.add('anima-da-direita-para-esquerda');
     back.style.display = 'flex';
     listaProduto.style.display = 'none';
-   
+    btnCarrinho.style.backgroundColor = '#535151'
+    btnCarrinho.style.color = '#fff'
+    btnLista.style.backgroundColor = '#fff'
+    btnLista.style.color = '#000';
+
   });
   
