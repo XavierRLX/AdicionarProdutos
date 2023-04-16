@@ -12,6 +12,8 @@
 body{
     font-family: nunito sans;
     background-color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
   }
   .center{
     display: flex;
@@ -28,25 +30,31 @@ body{
     height: 50px;
     margin: 30px;
   }
-  
+
   nav > .btnMenu {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 50px;
   }
+  
   .btnMenu > button {
-    width: 200px;
+    flex-basis: 50%;
+    flex-grow: 1;
     height: 50px;
     border: none;
     border-radius: 5px;
     font-weight: 700;
     background-color: #ffffff;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.281);
-    
+    margin: 0 20px;
   }
+  
   .ListaProduto{
     display: flex;
     justify-content: center;
     margin: 0 auto;
+   margin-bottom: 10px;
     max-width: 800px;
     transform: translateX(-100%);
     /* Define a animação */
@@ -66,12 +74,12 @@ body{
   .adcLista{
     border-bottom: #535151 solid 1px;
   }
-  #labelLista {
-    font-weight: 700;
-    padding: 5px;
-}
-  #inputLista {
-    border: none;
+  .adcLista > input {
+    all: initial;
+
+    }
+  .adcLista > #inputListaQnt {
+    width: 50px;
   }
   
   main {
@@ -130,6 +138,11 @@ img {
 #resultado{
     margin-top: 100px;
 }
+.marcado {
+  text-decoration: line-through;
+  color: gray;
+}
+
   /* Tela adicionar produto */
 
   #adicionar-produto {
@@ -148,6 +161,7 @@ img {
       box-shadow: 0px 2px 7px rgb(0, 0, 0);
       border-radius: 20px 20px 0px 0px;
   }
+
 #adicionar-produto-texto{
     font-size: large;
     font-weight: 700;
@@ -203,6 +217,8 @@ img {
 
   #adicionar-produto-form {
       display: none;
+      width: 90%;
+      max-width: 800px;
   }
 
   .info-produtos {
@@ -219,7 +235,7 @@ img {
 
  .lineInput > input {
       height: 30px;
-      width: 400px;
+      width: 100%;
       border: none;
       border-radius: 5px;
       padding: 5px;

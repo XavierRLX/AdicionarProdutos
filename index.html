@@ -23,19 +23,25 @@
 
     <section id="ListaProdutoId" class="ListaProduto">
         <div class="content">
-            <h2>Produtos a comprar</h2> <br>
-            <div class="flex">
-                <div class="adcLista">
-                    <label id="labelLista"> Item:</label>
-                    <input id="inputLista" type="text" id="produto" placeholder="Escreva o item">
-                </div>
-                <div>
-                    <button class="btnAdcLista">Adicionar</button>
-                </div>
+          <h2>Produtos a comprar</h2> <br>
+          <div class="flex">
+            <div class="adcLista">
+              <label id="labelLista"> Item:</label>
+              <input id="inputLista" type="text" id="Listaproduto" placeholder="Escreva o item">
+              <label id="labelListaQnt">Volume:</label>
+              <input id="inputListaQnt" type="text" id="ListaQuantidade" placeholder="0">
             </div>
+            <div>
+              <button class="btnAdcLista">Adicionar</button>
+            </div>
+          </div>
         </div>
-    </section>
-
+      </section>
+      
+      <section class="content ListaProduto">
+        <ul id="listaProdutos" class="lista"></ul>
+      </section>
+      
     <main class="back">
         <div class="content">
             <table>

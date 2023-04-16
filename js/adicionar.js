@@ -278,4 +278,61 @@ btnLista.addEventListener('click', () => {
     btnLista.style.color = '#000';
 
   });
+
+
+
+  const btnAdcLista = document.querySelector('.btnAdcLista');
+  btnAdcLista.addEventListener('click', adicionarProduto);
   
+  function adicionarProduto() {
+      const produto = document.getElementById('inputLista').value;
+      const quantidade = document.getElementById('inputListaQnt').value;
+      
+      // Criar elemento de lista com checkbox, botão de exclusão e botão "Peguei"
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span>${produto} (${quantidade})</span>
+        <button class="btnExcluir">Excluir</button>
+        <button class="btnListaAdicionaraoCarrinho">Adicionar ao Carrinho</button>
+        <button class="btnPeguei">Peguei</button>
+      `;
+      
+      // Adicionar elemento de lista à lista de produtos
+      const listaProdutos = document.getElementById('listaProdutos');
+      listaProdutos.appendChild(li);
+      
+      // Limpar os campos de entrada de dados
+      document.getElementById('inputLista').value = '';
+      document.getElementById('inputListaQnt').value = '';
+      
+    
+      const btnListaAdcCar = li.querySelector('.btnListaAdicionaraoCarrinho');
+
+      btnListaAdcCar.addEventListener('click', () => {
+        const produtoNome = li.querySelector('span').textContent.split('(')[0].trim();
+        document.getElementById('produto').value = produtoNome;
+        abrirAdicionarProduto();
+      });
+      
+
+      const btnPeguei = li.querySelector('.btnPeguei');
+      btnPeguei.addEventListener('click', () => {
+        li.style.textDecoration = "line-through";
+      });
+      
+  
+}
+    const listaProdutos = document.getElementById('listaProdutos');
+    listaProdutos.addEventListener('click', (event) => {
+      if (event.target.className === 'btnExcluir') {
+        event.target.parentElement.remove();
+      }
+    });
+
+
+  
+  
+
+
+
+
