@@ -38,7 +38,10 @@ nav > .btnMenu {
   align-items: center;
   margin-bottom: 50px;
 }
-
+#btnLista{
+  background-color: #535151;
+  color: #fff;
+}
 .btnMenu > button {
   flex-basis: 50%;
   flex-grow: 1;
@@ -60,7 +63,7 @@ nav > .btnMenu {
   height: 100%; /* define a altura do elemento pai */
   transform: translateX(-100%);
   /* Define a animação */
-  animation: anima-da-esquerda-para-direita 1s ease-in-out forwards;
+  animation: anima-da-esquerda-para-direita .5s ease-in-out forwards;
 }
 
 .ListaProduto .content {
@@ -74,6 +77,10 @@ nav > .btnMenu {
 
 #listaProdutos {
   height: 100%; /* define a altura do elemento filho */
+}
+#labelLista, #labelListaQnt{
+  font-size: medium;
+  font-weight: 700;
 }
 
 .btnAdcLista{
@@ -108,7 +115,7 @@ main {
   display: none;
   transform: translateX(100%);
   /* Define a animação */
-  animation: anima-da-esquerda-para-direita 1s ease-in-out forwards;
+  animation: anima-da-esquerda-para-direita .5s ease-in-out forwards;
 }
   
   .content {
@@ -120,6 +127,18 @@ main {
   }
   #produtoLista {
     margin: 10px 0px 10px 0px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .btnListaAdicionaraoCarrinho, .btnExcluir {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px 0 5px;
+  }
+      #produtoLista > span {
+        font-size: 1.4em;
+        width: 60%;
+        text-align: center;
       }
 
     #listaProdutos{
@@ -130,7 +149,6 @@ main {
     justify-items: center;
     justify-self: center;
     flex-direction: column;
-
   }
 
 span > h2 {
@@ -298,7 +316,7 @@ img {
   
   /* Aplica a animação ao elemento */
   #adicionar-produto-form {
-    animation: animacao 1s forwards;
+    animation: animacao .5s forwards;
   }
 
    /* Define a animação Form */
