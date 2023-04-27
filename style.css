@@ -38,6 +38,12 @@ nav > .btnMenu {
   align-items: center;
   margin-bottom: 50px;
 }
+#btnsLista{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
 #btnLista{
   background-color: #535151;
   color: #fff;
@@ -54,35 +60,37 @@ nav > .btnMenu {
   margin: 0 20px;
 }
 
+#btnLimpar{
+  width: 20px;
+  height: 20px;
+  margin: 15px 10px 0 0;
+}
 .ListaProduto{
   display: flex;
   justify-content: center;
   margin: 0 auto;
   margin-bottom: 10px;
   max-width: 800px;
-  height: 100%; /* define a altura do elemento pai */
   transform: translateX(-100%);
   /* Define a animação */
   animation: anima-da-esquerda-para-direita .5s ease-in-out forwards;
 }
 
-.ListaProduto .content {
+#fundoLista {
   background-color: #ffffff;
   padding: 20px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.281);
   border-radius: 5px;
   width: 85%;
-  height: 100%; /* define a altura do elemento filho */
-}
-
-#listaProdutos {
-  height: 100%; /* define a altura do elemento filho */
+  margin-bottom: 100px;
 }
 #labelLista, #labelListaQnt{
   font-size: medium;
   font-weight: 700;
 }
-
+.completed {
+  text-decoration: line-through;
+}
 .btnAdcLista{
   padding: 10px;
   margin-top: 10px;

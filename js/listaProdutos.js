@@ -4,7 +4,6 @@ function salvarListaProdutos() {
 }
 
 
-
 const btnAdcLista = document.querySelector('.btnAdcLista');
 btnAdcLista.addEventListener('click', adicionarProduto);
 
@@ -16,12 +15,12 @@ function adicionarProduto() {
   const li = document.createElement('div');
   li.innerHTML = `
       <div id="produtoLista" class="content">    
-      <button class="btnPeguei">Peguei</button>
-            <span>${produtoLista} </span>
-            <span> x ${quantidadeLista}</span>
+      <input type="checkbox" class="checkboxPeguei">
+            <div class="produtoListaEnviar">${produtoLista} </div>
+            <div class="qntListaEnviar"> x ${quantidadeLista} </div>
             <img src="img/adc_carrinho.png" alt="Adicionar ao Carrinho" class="btnListaAdicionaraoCarrinho"></img>
             <img src="img/del_lista.png" alt="Excluir Produto" class="btnExcluir"></img>
-            </div>  ` ;
+      </div>  ` ;
 
   // Adicionar elemento de lista à lista de produtos
   const listaProdutos = document.getElementById('listaProdutos');
@@ -36,21 +35,19 @@ function adicionarProduto() {
   adicionarEventListeners(li);
 
 
-  const btnListaAdcCar = li.querySelector('.btnListaAdicionaraoCarrinho');
-
-  btnListaAdcCar.addEventListener('click', () => {
-    const produtoNome = li.querySelector('span').textContent.split('(')[0].trim();
-    document.getElementById('produto').value = produtoNome;
-    abrirAdicionarProduto();
-    salvarListaProdutos();
+  const checkboxPeguei = li.querySelector('.checkboxPeguei');
+  checkboxPeguei.addEventListener('change', () => {
+    const produtoListaDiv = checkboxPeguei.nextElementSibling;
+    if (checkboxPeguei.checked) {
+      produtoListaDiv.classList.add('completed');
+    } else {
+      produtoListaDiv.classList.remove('completed');
+    }
   });
-
-
-  const btnPeguei = li.querySelector('.btnPeguei');
-  btnPeguei.addEventListener('click', () => {
-    li.style.textDecoration = "line-through";
-  });
+  
+  
   adicionarEventListeners(li);
+
 }
 
 const listaProdutos = document.getElementById('listaProdutos');
@@ -60,6 +57,16 @@ listaProdutos.addEventListener('click', (event) => {
     salvarListaProdutos();
   }
 });
+
+const btnLimpar = document.getElementById('btnLimpar');
+btnLimpar.addEventListener('click', limparProdutos);
+
+function limparProdutos() {
+  const listaProdutos = document.getElementById('listaProdutos');
+  listaProdutos.innerHTML = '';
+  salvarListaProdutos();
+}
+
 
 window.onload = function () {
   const listaProdutos = document.getElementById('listaProdutos');
@@ -79,14 +86,12 @@ window.onload = function () {
 function adicionarEventListeners(elemento) {
   const btnListaAdcCar = elemento.querySelector('.btnListaAdicionaraoCarrinho');
   btnListaAdcCar.addEventListener('click', () => {
-    const produtoNome = elemento.querySelector('span').textContent.split('(')[0].trim(); // Extrai o nome do produto da linha de texto do elemento "elemento"
+    const produtoNome = elemento.querySelector('.produtoListaEnviar').textContent.split('(')[0].trim(); // Extrai o nome do produto da linha de texto do elemento "elemento"
     document.getElementById('produto').value = produtoNome;
+    const produtoQNT = elemento.querySelector('.qntListaEnviar').textContent.split('x')[1].trim();
+    document.getElementById('quantidade').value = produtoQNT;
     abrirAdicionarProduto();
     salvarListaProdutos();
   });
 
-  const btnPeguei = elemento.querySelector('.btnPeguei');
-  btnPeguei.addEventListener('click', () => {
-    elemento.style.textDecoration = "line-through";
-  });
 }

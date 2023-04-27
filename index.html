@@ -22,7 +22,7 @@
     </nav>
 
     <section id="ListaProdutoId" class="ListaProduto animated">
-        <div class="content">
+        <div id="fundoLista" class="content">
           <h2>Produtos a comprar</h2> <br>
           <div class="flex">
             <div class="adcLista">
@@ -31,11 +31,13 @@
               <label id="labelListaQnt">Volume:</label>
               <input id="inputListaQnt" type="text" id="ListaQuantidade" placeholder="0">
             </div>
-            <div>
-              <button class="btnAdcLista">Adicionar</button>
-            </div>
+            <div id="btnsLista">
+                <button class="btnAdcLista">Adicionar</button> 
+                <img id="btnLimpar" src="img/btn_Limpar.png" alt="">
+            </div> 
+           
           </div>
-          <div class="ListaProduto">
+          <div id="tamanhoList" class="ListaProduto">
             <div id="listaProdutos" class="lista"></div>
           </div>
         </div>
