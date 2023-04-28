@@ -6,14 +6,18 @@
 *{
   margin: 0;
   padding: 0;
-  font-size: 1.4vh;
+  font-size: 1em;
 }
 
 body{
   font-family: nunito sans;
-  background-color: #ffffff;
+  background-color: #A3ABB2;
   max-width: 800px;
   margin: 0 auto;
+}
+
+input, input::placeholder{
+ font-family: nunito sans; 
 }
 
 .center{
@@ -26,10 +30,14 @@ h1{
   font-size: 2em;
 }
 
-header {
+header{
   text-align: center;
-  height: 50px;
-  margin: 30px;
+}
+
+#logo{
+  margin-top: -20px;
+  width: 150px;
+  height: 150px;
 }
 
 nav > .btnMenu {
@@ -43,10 +51,14 @@ nav > .btnMenu {
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  margin-top: 10px;
 }
 #btnLista{
   background-color: #535151;
   color: #fff;
+}
+#btnCarrinho{
+  color: #17335D;
 }
 .btnMenu > button {
   flex-basis: 50%;
@@ -55,7 +67,7 @@ nav > .btnMenu {
   border: none;
   border-radius: 5px;
   font-weight: 700;
-  background-color: #ffffff;
+  background-color: #e3e6e9;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.281);
   margin: 0 20px;
 }
@@ -77,7 +89,8 @@ nav > .btnMenu {
 }
 
 #fundoLista {
-  background-color: #ffffff;
+  color: #17335D;
+  background-color: #e3e6e9;
   padding: 20px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.281);
   border-radius: 5px;
@@ -108,7 +121,13 @@ nav > .btnMenu {
 }
 
 .adcLista > input {
+  border: none;
+  background-color: #e3e6e9;
+}
+.adcLista > input:focus{
   all: initial;
+  font-family: nunito sans;
+  background-color: #e3e6e9;
 }
 
 .adcLista > #inputListaQnt {
@@ -127,7 +146,7 @@ main {
 }
   
   .content {
-    background-color: #ffffff;
+    background-color: #e3e6e9;
     padding: 20px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.281);
     border-radius: 5px;
@@ -137,6 +156,11 @@ main {
     margin: 10px 0px 10px 0px;
     display: flex;
     justify-content: space-around;
+    background-color:#535151 ;
+    color: #e3e6e9;
+    font-weight: 700;
+    font-size: 1.1em;
+
   }
   .btnListaAdicionaraoCarrinho, .btnExcluir {
     width: 20px;
@@ -158,6 +182,15 @@ main {
     justify-self: center;
     flex-direction: column;
   }
+  .animationCimaBaxio{
+    animation-name: animacao-cima-baixo ;
+    animation: animacao-cima-baixo .5s forwards;
+  }
+  .animationRemove {
+    animation-name: animacao-baixo-cima;
+    animation-duration: .5s; /* duração de 1 segundo */
+  }
+  
 
 span > h2 {
     margin-bottom: 20px;
@@ -356,3 +389,22 @@ img {
       transform: translateX(0); /* Define a posição final do elemento fora da tela, à direita */
     }
   }
+  @keyframes animacao-cima-baixo {
+    from {
+      transform: translateY(-50%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes animacao-baixo-cima {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(50px);
+    }
+  }
+
+

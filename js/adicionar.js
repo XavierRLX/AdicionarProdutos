@@ -260,10 +260,10 @@ const back = document.querySelector('.back');
 btnLista.addEventListener('click', () => {
     listaProduto.style.display = 'flex';
     back.style.display = 'none';
-    btnCarrinho.style.backgroundColor = '#fff'
-    btnCarrinho.style.color = '#000'
+    btnCarrinho.style.backgroundColor = '#e3e6e9'
+    btnCarrinho.style.color = '#17335D'
     btnLista.style.backgroundColor = '#535151'
-    btnLista.style.color = '#fff'
+    btnLista.style.color = '#e3e6e9'
     
   });
   
@@ -272,9 +272,9 @@ btnLista.addEventListener('click', () => {
     back.style.display = 'flex';
     listaProduto.style.display = 'none';
     btnCarrinho.style.backgroundColor = '#535151'
-    btnCarrinho.style.color = '#fff'
-    btnLista.style.backgroundColor = '#fff'
-    btnLista.style.color = '#000';
+    btnCarrinho.style.color = '#e3e6e9'
+    btnLista.style.backgroundColor = '#e3e6e9'
+    btnLista.style.color = '#17335D';
 
   });
 
