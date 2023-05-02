@@ -169,7 +169,7 @@ class Produto {
             msg += ' - Informe o nome do Prdouto \n'
         }
         if (produto.quantidade == '') {
-            msg += ' - Informe o nome do Prdouto \n'
+            msg += ' - Informe a quantidade do Prdouto \n'
         }
         if (msg != '') {
             alert(msg);

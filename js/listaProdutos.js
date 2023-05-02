@@ -32,8 +32,8 @@ function adicionarProduto() {
       if (quantidadeLista == 0)
       {
         quantidadeLista = 1;
-        return
       }
+      
   // Adicionar elemento de lista à lista de produtos
   const listaProdutos = document.getElementById('listaProdutos');
   listaProdutos.appendChild(li);  
@@ -71,6 +71,23 @@ listaProdutos.addEventListener('click', (event) => {
   }
 });
 
+const btnBuscar = document.getElementById('btnBuscar');
+btnBuscar.addEventListener('click', buscarProduto);
+
+function buscarProduto() {
+  const produtoBuscado = document.getElementById('inputBusca').value;
+  const produtos = document.querySelectorAll('.content');
+
+  produtos.forEach(produto => {
+    const nomeProduto = produto.querySelector('.produtoListaEnviar').textContent;
+    if (nomeProduto.includes(produtoBuscado)) {
+      produto.classList.add('highlight');
+      produto.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    } else {
+      produto.classList.remove('highlight');
+    }
+  });
+}
 
 
 const btnLimpar = document.getElementById('btnLimpar');
