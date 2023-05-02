@@ -11,6 +11,13 @@ function adicionarProduto() {
   const produtoLista = document.getElementById('inputLista').value;
   const quantidadeLista = document.getElementById('inputListaQnt').value;
 
+  
+  // validar se o campo de produto está vazio
+  if (produtoLista == "") {
+   alert('Por favor, insira o nome do produto.');
+    return;
+  }
+
   // Criar elemento de lista com checkbox, botão de exclusão e botão "Peguei"
   const li = document.createElement('div');
   li.innerHTML = `
@@ -22,6 +29,11 @@ function adicionarProduto() {
             <img src="img/del_lista.png" alt="Excluir Produto" class="btnExcluir"></img>
       </div> ` ;
 
+      if (quantidadeLista == 0)
+      {
+        quantidadeLista = 1;
+        return
+      }
   // Adicionar elemento de lista à lista de produtos
   const listaProdutos = document.getElementById('listaProdutos');
   listaProdutos.appendChild(li);  

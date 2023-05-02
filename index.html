@@ -29,7 +29,7 @@
               <label id="labelLista"> Item:</label>
               <input id="inputLista" type="text" id="Listaproduto" placeholder="Escreva o item">
               <label id="labelListaQnt">Volume:</label>
-              <input id="inputListaQnt" type="number" id="ListaQuantidade" placeholder="0">
+              <input id="inputListaQnt" value="" type="number" id="ListaQuantidade" placeholder="1">
             </div>
             <div id="btnsLista">
                 <button class="btnAdcLista">Adicionar</button> 
@@ -68,7 +68,6 @@
             </div>
     </main>
 
-        
     <div id="adicionar-produto">
         <div id="adicionar-produto-topo">
             <div id="adicionar-produto-texto">ADICIONAR AO CARRINHO <span>+</span></div>
@@ -102,16 +101,13 @@
                             <label>QUANTIDADE:</label> <br>
                             <input type="number" id="quantidade" placeholder="12">
                         </div>
-    
                     </div>
-    
                     <button onclick="produto.salvar()" id="btn1">Adicionar</button>
                     <button id="canelar" onclick="produto.cancelar()">Limpar</button>
                 </div>
             </div>
         </div>
     </div>
-
 
     <script src="js/adicionar.js"></script>
     <script src="js/listaProdutos.js"></script>

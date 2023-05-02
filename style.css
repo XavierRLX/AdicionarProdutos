@@ -45,6 +45,7 @@ nav > .btnMenu {
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+
 }
 #btnsLista{
   display: flex;
@@ -110,7 +111,7 @@ nav > .btnMenu {
   border: none;
   border-radius: 5px;
   color: #fff;
-  font-weight: 500;
+  font-weight: 700;
   margin: 10px 0 0 0;
   box-shadow: 0px 2px 51px rgba(0, 0, 0, 0.158);
   background-color: #6FCF97;
@@ -144,7 +145,7 @@ main {
   /* Define a animação */
   animation: anima-da-esquerda-para-direita .5s ease-in-out forwards;
 }
-  
+
   .content {
     background-color: #e3e6e9;
     padding: 20px;
@@ -160,12 +161,12 @@ main {
     color: #e3e6e9;
     font-weight: 700;
     font-size: 1.1em;
-
   }
   .btnListaAdicionaraoCarrinho, .btnExcluir {
     width: 20px;
     height: 20px;
     margin: 0 5px 0 5px;
+    filter: invert(100%);
   }
       #produtoLista > span {
         font-size: 1.4em;
