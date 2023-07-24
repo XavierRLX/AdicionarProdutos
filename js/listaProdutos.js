@@ -88,7 +88,14 @@ function buscarProduto() {
     }
   });
 }
+const btnLimparAnim = document.getElementById('btnLimpar');
 
+btnLimparAnim.addEventListener('click', () => {
+  btnLimparAnim.classList.add('clicked');
+  setTimeout(() => {
+    btnLimparAnim.classList.remove('clicked');
+  }, 1000);
+});
 
 const btnLimpar = document.getElementById('btnLimpar');
 btnLimpar.addEventListener('click', limparProdutos);
