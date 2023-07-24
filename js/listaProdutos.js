@@ -13,8 +13,8 @@ function adicionarProduto() {
 
   
   // validar se o campo de produto está vazio
-  if (produtoLista == "") {
-   alert('Por favor, insira o nome do produto.');
+  if (produtoLista == "" || quantidadeLista <= 0) {
+   alert('Insira valores válidos nos campos "Item" e "Volume"');
     return;
   }
 
@@ -145,6 +145,7 @@ window.onload =  SalvarDados();
       }
     });
   }
+  
   // Seleciona todos os checkboxes com a classe "checkboxPeguei"
   const checkboxes = document.querySelectorAll('.checkboxPeguei');
   // Itera sobre cada checkbox selecionado e define o estado de marcação salvo no localStorage

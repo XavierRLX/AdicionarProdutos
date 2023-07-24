@@ -13,7 +13,10 @@ body{
   font-family: nunito sans;
   background-color: #A3ABB2;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto !important;
+}
+button, .btnListaAdicionaraoCarrinho, .btnExcluir, #btnLimpar {
+  cursor: pointer;
 }
 
 input, input::placeholder{
@@ -178,7 +181,7 @@ nav > .btnMenu {
   width: 50px;
 }
 
-main {
+.back {
   display: flex;
   justify-content: center;
   margin: 0 auto;

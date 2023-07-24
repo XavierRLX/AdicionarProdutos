@@ -161,20 +161,21 @@ class Produto {
     validaCampos(produto) {
         let msg = '';
 
-        if (produto.preco == '') {
-            msg += ' - Informe o Preço do Prdouto \n'
+        if (produto.preco == '' || produto.preco <= 0) {
+            msg += ' - Informe o Preço do Prdouto válido \n'
         }
 
         if (produto.nomeProduto == '') {
             msg += ' - Informe o nome do Prdouto \n'
         }
-        if (produto.quantidade == '') {
-            msg += ' - Informe a quantidade do Prdouto \n'
+        if (produto.quantidade == '' || produto.quantidade <= 0) {
+            msg += ' - Informe a quantidade do Prdouto válido \n'
         }
         if (msg != '') {
             alert(msg);
             return false;
         }
+        alert("Adicionado com sucesso !")
         return true;
     }
 
